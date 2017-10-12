@@ -8,19 +8,16 @@
 import numpy as np
 import scipy as sp
 import Econ_Sim_Expenditure as exp
+import Econ_Sim_Functionality as func
 
-black_hole = exp.spend_item('black_hole', 1500, 0.25, 1)
+# Spend items
+exp_items = exp.expenditure_items
 
-#print black_hole.probable_use()
-#print black_hole.probable_spend()
+days_spend_7 = func.n_days_money(7, exp_items)
+days_spend_14 = func.n_days_money(14, exp_items)
 
-cloak = exp.spend_item('Invisibility_cloak', 125, 0.5, 3)
+for i in days_spend_7:
+    print i, days_spend_7[i]
 
-#print cloak.probable_use()
-#print cloak.probable_spend()
-
-radar = exp.spend_item('radar', 200, 0.6, 3)
-
-print radar.probable_spend()
-print cloak.probable_spend()
-print black_hole.probable_spend()
+for j in days_spend_14:
+    print j, days_spend_14[j]
